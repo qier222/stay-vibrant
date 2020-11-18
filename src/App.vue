@@ -21,8 +21,13 @@
             {{ playlist.subtitle }}
           </div>
         </div>
-        <div class="next" @click="nextPlaylist">
-          →
+        <div class="controls">
+          <div class="play" @click="playOrPause">
+            {{ playButtonText }}
+          </div>
+          <div class="next" @click="nextPlaylist">
+            NEXT
+          </div>
         </div>
       </div>
     </div>
@@ -54,6 +59,7 @@ export default {
       timer: null,
       clickPlay: false,
       showStartButton: true,
+      playButtonText: "LOADING",
     };
   },
   created() {
@@ -78,6 +84,12 @@ export default {
     this.player.on("ended", () => {
       this.nextVideo();
     });
+    this.player.on("pause", () => {
+      this.playButtonText = "PLAY";
+    });
+    this.player.on("playing", () => {
+      this.playButtonText = "PAUSE";
+    });
   },
   methods: {
     startPlay() {
@@ -87,6 +99,9 @@ export default {
       setTimeout(() => {
         this.showStartButton = false;
       }, 300);
+    },
+    playOrPause() {
+      this.player.togglePlay();
     },
     doShowInfo() {
       this.showInfo = true;
@@ -270,16 +285,25 @@ body {
       font-size: 18px;
       font-weight: 600;
     }
-    .next {
-      font-size: 48px;
-      cursor: pointer;
+    .controls {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      padding: 0 18px;
-      border: 3px solid transparent;
-      &:hover {
-        border-color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+      .play {
+        margin-right: 48px;
+        transition: all 0.4s;
+        &:hover {
+          letter-spacing: 2px;
+        }
+      }
+      .next {
+        margin-right: 24px;
+        transition: all 0.4s;
+        &:hover {
+          letter-spacing: 2px;
+        }
       }
     }
   }
