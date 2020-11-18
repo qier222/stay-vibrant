@@ -95,7 +95,6 @@ export default {
   mounted() {
     this.player = new Plyr(this.$refs.videoPlayer, {
       controls: [],
-      // autoplay: true,
       youtube: {},
     });
     this.nextVideo();
@@ -154,6 +153,7 @@ export default {
       }
     },
     nextVideo() {
+      this.playButtonText = "PLAY";
       this.setShowInfoTimer();
       let videoID = null;
       if (this.playingVideoID === null) {
@@ -166,7 +166,6 @@ export default {
           return;
         }
       }
-      console.log({ videoID });
       this.playingVideoID = videoID;
       this.player.source = {
         type: "video",
@@ -400,7 +399,7 @@ body {
 @media (max-width: 768px) {
   .plyr {
     width: calc(100vh / 9 * 16);
-    margin-left: -50vh;
+    margin-left: calc((100vh / 9 * 16 - 100vw) / -2);
     max-width: unset;
   }
 
