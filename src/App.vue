@@ -414,7 +414,7 @@ body {
       flex-direction: column;
       align-items: flex-start;
       .title {
-        font-size: 3rem;
+        font-size: 2.8rem;
       }
       .menu {
         margin-top: 6px;
@@ -425,11 +425,11 @@ body {
         margin-top: -4px;
         display: block;
         .title {
-          font-size: 2.2rem;
+          font-size: 2rem;
         }
         .subtitle {
           margin-top: 3px;
-          font-size: 1.4rem;
+          font-size: 1.2rem;
         }
       }
     }
