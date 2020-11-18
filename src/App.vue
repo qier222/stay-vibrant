@@ -1,13 +1,23 @@
 <template>
   <div id="app">
-    <video ref="videoPlayer" class="plyr"></video>
+    <div class="video-wrapper">
+      <video ref="videoPlayer" class="plyr"></video>
+    </div>
     <div class="grey" v-show="true"></div>
-    <div class="stay-vibrant" v-show="!showInfo && clickPlay">
+    <div class="stay-vibrant" v-show="!showInfo && clickPlay && !isMobile">
       <span @click="doShowInfo">STAY VIBRANT</span>
     </div>
-    <div class="info" v-show="showInfo">
+    <div class="info" v-show="showInfo || isMobile">
       <div class="top">
         <div class="title">STAY VIBRANT</div>
+        <div class="video-info">
+          <div class="title link" @click="toYouTube">
+            {{ playlist.title }}
+          </div>
+          <div class="subtitle">
+            {{ playlist.subtitle }}
+          </div>
+        </div>
         <div class="menu">
           <div class="link" @click="toQier222">COLLECTED BY QIER222</div>
         </div>
@@ -59,8 +69,16 @@ export default {
       timer: null,
       clickPlay: false,
       showStartButton: true,
-      playButtonText: "LOADING",
+      playButtonText: "PLAY",
     };
+  },
+  computed: {
+    windowWidth() {
+      return document.body.clientWidth;
+    },
+    isMobile() {
+      return this.windowWidth <= 768;
+    },
   },
   created() {
     let playedPlaylists = JSON.parse(localStorage.getItem("playedPlaylists"));
@@ -111,9 +129,11 @@ export default {
       if (this.timer !== null) {
         clearTimeout(this.timer);
       }
-      this.timer = setTimeout(() => {
-        this.showInfo = false;
-      }, 15000);
+      if (this.windowWidth > 768) {
+        this.timer = setTimeout(() => {
+          this.showInfo = false;
+        }, 15000);
+      }
     },
     pickAUnplayedPlaylist() {
       let playedPlaylists = JSON.parse(localStorage.getItem("playedPlaylists"));
@@ -182,15 +202,15 @@ body {
   font-family: Inter, sans-serif;
 }
 
-.plyr {
-  height: 100vh;
+.video-wrapper {
   width: 100vw;
-  z-index: 1;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.plyr__video-embed iframe {
-  top: -50%;
-  height: 200%;
+.plyr {
+  height: 100vh;
+  z-index: 1;
 }
 
 .grey {
@@ -204,6 +224,11 @@ body {
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: saturate(160%) contrast(110%) brightness(104%);
   z-index: 1;
+}
+
+.plyr__video-embed iframe {
+  top: -50%;
+  height: 200%;
 }
 
 .stay-vibrant {
@@ -264,6 +289,9 @@ body {
     .menu div {
       margin-right: 18px;
     }
+    .video-info {
+      display: none;
+    }
   }
 
   .bottom {
@@ -273,17 +301,19 @@ body {
     bottom: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 32px 17px 32px;
+    align-items: flex-end;
+    padding: 0 32px 32px 32px;
 
     .title {
       font-weight: 700;
       font-size: 24px;
       margin-bottom: 8px;
+      margin-left: 4px;
     }
     .subtitle {
       font-size: 18px;
       font-weight: 600;
+      margin-left: 4px;
     }
     .controls {
       display: flex;
@@ -364,6 +394,71 @@ body {
     animation-fill-mode: forwards;
     backdrop-filter: none;
     color: rgba(255, 255, 255, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .plyr {
+    width: calc(100vh / 9 * 16);
+    margin-left: -50vh;
+    max-width: unset;
+  }
+
+  .stay-vibrant {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .info {
+    .top {
+      flex-direction: column;
+      align-items: flex-start;
+      .title {
+        font-size: 3rem;
+      }
+      .menu {
+        margin-top: 6px;
+        font-size: 0.6rem;
+        opacity: 0.28;
+      }
+      .video-info {
+        margin-top: -4px;
+        display: block;
+        .title {
+          font-size: 2.2rem;
+        }
+        .subtitle {
+          margin-top: 3px;
+          font-size: 1.4rem;
+        }
+      }
+    }
+    .bottom {
+      flex-direction: column;
+      .title {
+        font-size: 1.4rem;
+        display: none;
+      }
+      .subtitle {
+        font-size: 1rem;
+        display: none;
+      }
+      .controls {
+        margin-bottom: 24px;
+        font-size: 1.2rem;
+        justify-content: flex-start;
+        text-align: center;
+        width: 100%;
+        .play {
+          margin-right: 0;
+          flex: 1;
+        }
+        .next {
+          flex: 1;
+          margin-right: 0;
+        }
+      }
+    }
   }
 }
 </style>

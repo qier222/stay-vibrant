@@ -19,11 +19,11 @@ export default [
     subtitle: "Madeon",
     videos: ["PSRdKi2GscM"],
   },
-  {
-    title: "Chill At Home Mix: Episode 1",
-    subtitle: "Shallou",
-    videos: ["AxMEfSW43kQ"],
-  },
+  // {
+  //   title: "Chill At Home Mix: Episode 1",
+  //   subtitle: "Shallou",
+  //   videos: ["AxMEfSW43kQ"],
+  // },
   {
     title: "Chill At Home Mix: Episode 2",
     subtitle: "Shallou",
@@ -36,12 +36,12 @@ export default [
   //   },
   {
     title: "Parachute",
-    subtitle: "Petit Biscuit 🍪",
+    subtitle: "Petit Biscuit",
     videos: ["Hb0C16l9Msc"],
   },
   {
     title: "Presence",
-    subtitle: "Petit Biscuit 🍪",
+    subtitle: "Petit Biscuit",
     videos: [
       "LdlC3XLRiRE",
       "SldXr6mQ4zo",
