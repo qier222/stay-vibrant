@@ -414,7 +414,7 @@ body {
       flex-direction: column;
       align-items: flex-start;
       .title {
-        font-size: 2.8rem;
+        font-size: 3rem;
       }
       .menu {
         margin-top: 6px;
@@ -425,11 +425,11 @@ body {
         margin-top: -4px;
         display: block;
         .title {
-          font-size: 2rem;
+          font-size: 2.2rem;
         }
         .subtitle {
           margin-top: 3px;
-          font-size: 1.2rem;
+          font-size: 1.4rem;
         }
       }
     }
@@ -459,6 +459,49 @@ body {
         }
       }
     }
+  }
+}
+
+@media (max-width: 414px) {
+  .info .top {
+    .title {
+      font-size: 2.9rem;
+    }
+    .menu {
+      font-size: 0.6rem;
+    }
+    .video-info {
+      .title {
+        font-size: 2.2rem;
+      }
+      .subtitle {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .info .top {
+    .title {
+      font-size: 2.6rem;
+    }
+    .menu {
+      font-size: 0.6rem;
+    }
+    .video-info {
+      .title {
+        font-size: 1.8rem;
+      }
+      .subtitle {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+@media (max-width: 360px) {
+  .info .top .title {
+    font-size: 2.1rem;
   }
 }
 </style>
