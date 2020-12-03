@@ -19,21 +19,36 @@ export default [
     subtitle: "Madeon",
     videos: ["PSRdKi2GscM"],
   },
+  {
+    title: "Live from the Aquarium",
+    subtitle: "Elderbrook",
+    videos: ["WibjzL3fF1o"],
+  },
   // {
-  //   title: "Chill At Home Mix: Episode 1",
-  //   subtitle: "Shallou",
-  //   videos: ["AxMEfSW43kQ"],
+  //   title: "Plitvice Lakes National Park",
+  //   subtitle: "Disclosure",
+  //   videos: ["crZfT5qnFdA"],
   // },
   {
-    title: "Chill At Home Mix: Episode 2",
-    subtitle: "Shallou",
-    videos: ["mYMV2RXsTLc"],
+    title: "CANDY II Special Performance (Digital Mirage Friendsgiving)",
+    subtitle: "Louis The Child",
+    videos: ["vj2BUBh6nUk"],
   },
-  //   {
-  //     title: "Chill At Home Mix: Episode 3",
-  //     subtitle: "Shallou",
-  //     videos: ["UAifTrH5m5k"],
-  //   },
+  {
+    title: "FIFA 21 World Premiere",
+    subtitle: "Louis The Child",
+    videos: ["sgLC5EAVmTU"],
+  },
+  {
+    title: "Live from the Aquarium",
+    subtitle: "Elderbrook",
+    videos: ["WibjzL3fF1o"],
+  },
+  {
+    title: "Sunrise Set - Grand Lake, CO",
+    subtitle: "Lane 8",
+    videos: ["n_LcVqqHSY8"],
+  },
   {
     title: "Parachute",
     subtitle: "Petit Biscuit",
