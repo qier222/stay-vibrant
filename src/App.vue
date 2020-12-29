@@ -70,26 +70,27 @@ export default {
       clickPlay: false,
       showStartButton: true,
       playButtonText: "PLAY",
+      playedPlaylists: [],
+      windowWidth: document.body.clientWidth,
     };
   },
   computed: {
-    windowWidth() {
-      return document.body.clientWidth;
-    },
     isMobile() {
       return this.windowWidth <= 768;
     },
   },
   created() {
-    let playedPlaylists = JSON.parse(localStorage.getItem("playedPlaylists"));
-    if (playedPlaylists === null) {
-      playedPlaylists = [];
-      localStorage.setItem("playedPlaylists", JSON.stringify([]));
+    let playedPlaylistsInLocal = JSON.parse(
+      localStorage.getItem("playedPlaylists")
+    );
+    if (playedPlaylistsInLocal !== null) {
+      this.playedPlaylists = playedPlaylistsInLocal;
     }
+
     this.playlist = this.pickAUnplayedPlaylist();
-    if (playedPlaylists.includes(this.playlist.title) === false) {
-      playedPlaylists.push(this.playlist.title);
-      localStorage.setItem("playedPlaylists", JSON.stringify(playedPlaylists));
+
+    if (this.playedPlaylists.includes(this.playlist.title) === false) {
+      this.playedPlaylists.push(this.playlist.title);
     }
   },
   mounted() {
@@ -107,8 +108,12 @@ export default {
     this.player.on("playing", () => {
       this.playButtonText = "PAUSE";
     });
+    window.addEventListener("resize", this.handleResize);
   },
   methods: {
+    handleResize() {
+      this.windowWidth = document.body.clientWidth;
+    },
     startPlay() {
       this.clickPlay = true;
       this.player.play();
@@ -128,27 +133,31 @@ export default {
       if (this.timer !== null) {
         clearTimeout(this.timer);
       }
-      if (this.windowWidth > 768) {
+      if (!this.isMobile) {
         this.timer = setTimeout(() => {
           this.showInfo = false;
         }, 15000);
       }
     },
     pickAUnplayedPlaylist() {
-      let playedPlaylists = JSON.parse(localStorage.getItem("playedPlaylists"));
       let availablePlaylists = playlists.filter((p) => {
         if (
-          playedPlaylists.includes(p.title) === false &&
+          this.playedPlaylists.includes(p.title) === false &&
           p.title !== this.playlist?.title
-        )
+        ) {
           return p;
+        }
       });
+
       if (availablePlaylists.length !== 0) {
-        return availablePlaylists[
-          Math.floor(Math.random() * availablePlaylists.length)
-        ];
+        let pickedPlaylist =
+          availablePlaylists[
+            Math.floor(Math.random() * availablePlaylists.length)
+          ];
+        this.playedPlaylists.push(pickedPlaylist.title);
+        return pickedPlaylist;
       } else {
-        localStorage.setItem("playedPlaylists", JSON.stringify([]));
+        this.playedPlaylists = [];
         return this.pickAUnplayedPlaylist();
       }
     },
@@ -187,6 +196,14 @@ export default {
     },
     toQier222() {
       window.open("https://github.com/qier222");
+    },
+  },
+  watch: {
+    playedPlaylists: function() {
+      localStorage.setItem(
+        "playedPlaylists",
+        JSON.stringify(this.playedPlaylists)
+      );
     },
   },
 };
