@@ -15,6 +15,11 @@ export default [
     videos: ["0_VIvjGrwlg"],
   },
   {
+    title: "goodbye 2020 set [mixed feelings 4]",
+    subtitle: "San Holo",
+    videos: ["MzUncD8mbzc"],
+  },
+  {
     title: "MADEON DJ SET (Secret Sky Festival)",
     subtitle: "Madeon",
     videos: ["PSRdKi2GscM"],
