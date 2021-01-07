@@ -1,16 +1,16 @@
 export default [
   {
-    title: "Digital Mirage",
-    subtitle: "San Holo",
-    videos: ["QcA8PJybAas"],
-  },
-  {
-    title: "Secret Sky 2020",
+    title: "Secret Sky [mixed feelings 1]",
     subtitle: "San Holo",
     videos: ["hd2Uv_OFtZ0"],
   },
   {
-    title: "Monster Energy Up & Up Virtual Festival",
+    title: "Digital Mirage [mixed feelings 2]",
+    subtitle: "San Holo",
+    videos: ["QcA8PJybAas"],
+  },
+  {
+    title: "Monster Energy Up & Up Virtual Festival [mixed feelings 3]",
     subtitle: "San Holo",
     videos: ["0_VIvjGrwlg"],
   },
@@ -29,11 +29,6 @@ export default [
     subtitle: "Elderbrook",
     videos: ["WibjzL3fF1o"],
   },
-  // {
-  //   title: "Plitvice Lakes National Park",
-  //   subtitle: "Disclosure",
-  //   videos: ["crZfT5qnFdA"],
-  // },
   {
     title: "CANDY II Special Performance (Digital Mirage Friendsgiving)",
     subtitle: "Louis The Child",
@@ -45,9 +40,19 @@ export default [
     videos: ["sgLC5EAVmTU"],
   },
   {
-    title: "Live from the Aquarium",
-    subtitle: "Elderbrook",
-    videos: ["WibjzL3fF1o"],
+    title: "Secret Sky Set",
+    subtitle: "Porter Robinson",
+    videos: ["4KGsgpFiswQ"],
+  },
+  {
+    title: "Digital Mirage",
+    subtitle: "Party Pupils",
+    videos: ["xKmokX3zqHY"],
+  },
+  {
+    title: "Digital Mirage",
+    subtitle: "Matoma",
+    videos: ["at1uR71segI"],
   },
   {
     title: "Sunrise Set - Grand Lake, CO",
