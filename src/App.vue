@@ -42,11 +42,7 @@
       </div>
     </div>
     <div class="play-button-layout" v-if="showStartButton">
-      <div
-        :class="{ 'play-animation': clickPlay }"
-        class="play-button"
-        @click="startPlay"
-      >
+      <div class="play-button" @click="startPlay">
         PLAY
       </div>
     </div>
@@ -118,9 +114,7 @@ export default {
       this.clickPlay = true;
       this.player.play();
       this.player.autoplay = true;
-      setTimeout(() => {
-        this.showStartButton = false;
-      }, 300);
+      this.showStartButton = false;
     },
     playOrPause() {
       this.player.togglePlay();
@@ -368,48 +362,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @keyframes zooms {
-    0% {
-      height: 360px;
-      width: 360px;
-    }
-    100% {
-      height: 100vh;
-      width: 100vw;
-    }
-  }
+  mix-blend-mode: difference;
+  color: #fff;
 
   .play-button {
-    height: 320px;
-    width: 320px;
-    box-shadow: 0 0 0 4069px rgba(0, 0, 0, 0.98);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
-
-    font-size: 64px;
-    color: #fff;
-    backdrop-filter: blur(12px);
-
+    font-size: 8rem;
+    font-weight: 700;
     transition: all 0.6s;
-
+    letter-spacing: 4px;
     &:hover {
-      letter-spacing: 4px;
-      height: 360px;
-      width: 360px;
+      letter-spacing: 16px;
     }
-  }
-
-  .play-animation {
-    cursor: default;
-    animation-duration: 0.3s;
-    animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
-    animation-name: zooms;
-    animation-fill-mode: forwards;
-    backdrop-filter: none;
-    color: rgba(255, 255, 255, 0);
   }
 }
 
