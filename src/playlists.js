@@ -20,14 +20,24 @@ export default [
     videos: ["MzUncD8mbzc"],
   },
   {
-    title: "MADEON DJ SET (Secret Sky Festival)",
-    subtitle: "Madeon",
-    videos: ["PSRdKi2GscM"],
-  },
-  {
     title: "Live from the Aquarium",
     subtitle: "Elderbrook",
     videos: ["WibjzL3fF1o"],
+  },
+  {
+    title: "Digital Mirage",
+    subtitle: "Party Pupils",
+    videos: ["xKmokX3zqHY"],
+  },
+  {
+    title: `"Stay In Your Damn House" Dim Mak Livestream`,
+    subtitle: "Party Pupils",
+    videos: ["n5KDSO5BH2Q"],
+  },
+  {
+    title: "Parachute",
+    subtitle: "Petit Biscuit",
+    videos: ["Hb0C16l9Msc"],
   },
   {
     title: "CANDY II Special Performance (Digital Mirage Friendsgiving)",
@@ -40,14 +50,19 @@ export default [
     videos: ["sgLC5EAVmTU"],
   },
   {
+    title: "MADEON DJ SET (Secret Sky Festival)",
+    subtitle: "Madeon",
+    videos: ["PSRdKi2GscM"],
+  },
+  {
     title: "Secret Sky Set",
     subtitle: "Porter Robinson",
     videos: ["4KGsgpFiswQ"],
   },
   {
-    title: "Digital Mirage",
-    subtitle: "Party Pupils",
-    videos: ["xKmokX3zqHY"],
+    title: "Live from Los Angeles (Defected Virtual Festival)",
+    subtitle: "Love Regenerator",
+    videos: ["jIscKShtDIw"],
   },
   {
     title: "Digital Mirage",
@@ -58,32 +73,6 @@ export default [
     title: "Sunrise Set - Grand Lake, CO",
     subtitle: "Lane 8",
     videos: ["n_LcVqqHSY8"],
-  },
-  {
-    title: "Parachute",
-    subtitle: "Petit Biscuit",
-    videos: ["Hb0C16l9Msc"],
-  },
-  {
-    title: "Presence",
-    subtitle: "Petit Biscuit",
-    videos: [
-      "LdlC3XLRiRE",
-      "SldXr6mQ4zo",
-      "QFdzmvJDNQA",
-      "zLsYpniBbDw",
-      "RhxqYwNA72w",
-      "TOfTsI4joOs",
-      "hEmPwsq8eyc",
-      "XlrxRQgkV3Q",
-      "rLCiMmwbCwE",
-      "7JVzYNyzEt8",
-      "BpYAZ9ZyN0g",
-      "4fQeaM62mOY",
-      "tY8gbpXw9tE",
-      "QJ2RplC9unE",
-      "EHcwZDKqPUE",
-    ],
   },
   {
     title: "A STUDY IN MOVEMENT",
