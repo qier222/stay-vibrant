@@ -50,6 +50,11 @@ export default [
     videos: ["sgLC5EAVmTU"],
   },
   {
+    title: "Infinity Set ⚡",
+    subtitle: "Duskus",
+    videos: ["D72Kkvk--20"],
+  },
+  {
     title: "MADEON DJ SET (Secret Sky Festival)",
     subtitle: "Madeon",
     videos: ["PSRdKi2GscM"],
