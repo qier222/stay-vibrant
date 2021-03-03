@@ -84,4 +84,9 @@ export default [
     subtitle: "BAYNK",
     videos: ["nzW8h9eIPAc", "WPFKHtoPv7Q", "fEmab1pJcbM", "9zIaIn6D6ik"],
   },
+  {
+    title: "Nature",
+    subtitle: "Porter Robinson",
+    videos: ["TJBh_hj6DzE", "-C-2AqRD8io", "PkiIPzG37vQ", "4SZEDBFPpgw"],
+  },
 ];
