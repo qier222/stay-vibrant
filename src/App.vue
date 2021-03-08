@@ -3,11 +3,11 @@
     <div class="video-wrapper">
       <video ref="videoPlayer" class="plyr"></video>
     </div>
-    <div class="grey" v-show="true"></div>
+    <div class="grey" v-show="showGrey"></div>
     <div class="stay-vibrant" v-show="!showInfo && clickPlay && !isMobile">
       <span @click="doShowInfo">STAY VIBRANT</span>
     </div>
-    <div class="info" v-show="showInfo || isMobile">
+    <div class="info" v-show="showInfo || (isMobile && clickPlay)">
       <div class="top">
         <div class="title">STAY VIBRANT</div>
         <div class="video-info">
@@ -68,6 +68,7 @@ export default {
       playButtonText: "PLAY",
       playedPlaylists: [],
       windowWidth: document.body.clientWidth,
+      showGrey: true,
     };
   },
   computed: {
@@ -92,7 +93,9 @@ export default {
   mounted() {
     this.player = new Plyr(this.$refs.videoPlayer, {
       controls: [],
-      youtube: {},
+      youtube: {
+        start: 1,
+      },
     });
     this.nextVideo();
     this.player.on("ended", () => {
@@ -183,6 +186,8 @@ export default {
     nextPlaylist() {
       this.playlist = this.pickAUnplayedPlaylist();
       this.playingVideoID = null;
+      this.showGrey =
+        this.playlist.showGrey !== undefined ? this.playlist.showGrey : true;
       this.nextVideo();
     },
     toYouTube() {
@@ -256,6 +261,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 
   font-size: 8rem;
   font-weight: 700;
@@ -377,6 +383,14 @@ body {
   }
 }
 
+@media (max-width: 1200px) {
+  .plyr {
+    width: calc(100vh / 9 * 16);
+    margin-left: calc((100vh / 9 * 16 - 100vw) / -2);
+    max-width: unset;
+  }
+}
+
 @media (max-width: 768px) {
   .plyr {
     width: calc(100vh / 9 * 16);
@@ -440,6 +454,10 @@ body {
       }
     }
   }
+
+  .play-button-layout .play-button {
+    font-size: 6rem;
+  }
 }
 
 @media (max-width: 414px) {
@@ -458,6 +476,10 @@ body {
         font-size: 1.4rem;
       }
     }
+  }
+
+  .play-button-layout .play-button {
+    font-size: 4rem;
   }
 }
 

@@ -50,9 +50,10 @@ export default [
     videos: ["sgLC5EAVmTU"],
   },
   {
-    title: "Infinity Set ⚡",
+    title: "Infinity Set",
     subtitle: "Duskus",
     videos: ["D72Kkvk--20"],
+    showGrey: false,
   },
   {
     title: "MADEON DJ SET (Secret Sky Festival)",
@@ -63,16 +64,6 @@ export default [
     title: "Secret Sky Set",
     subtitle: "Porter Robinson",
     videos: ["4KGsgpFiswQ"],
-  },
-  {
-    title: "Live from Los Angeles (Defected Virtual Festival)",
-    subtitle: "Love Regenerator",
-    videos: ["jIscKShtDIw"],
-  },
-  {
-    title: "Digital Mirage",
-    subtitle: "Matoma",
-    videos: ["at1uR71segI"],
   },
   {
     title: "Sunrise Set - Grand Lake, CO",
