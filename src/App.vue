@@ -3,7 +3,10 @@
     <div class="video-wrapper">
       <video ref="videoPlayer" class="plyr"></video>
     </div>
-    <div class="grey" v-show="showGrey"></div>
+    <div
+      class="grey"
+      v-show="playlist.showGrey !== undefined ? playlist.showGrey : true"
+    ></div>
     <div class="stay-vibrant" v-show="!showInfo && clickPlay && !isMobile">
       <span @click="doShowInfo">STAY VIBRANT</span>
     </div>
@@ -68,7 +71,6 @@ export default {
       playButtonText: "PLAY",
       playedPlaylists: [],
       windowWidth: document.body.clientWidth,
-      showGrey: true,
     };
   },
   computed: {
@@ -186,8 +188,6 @@ export default {
     nextPlaylist() {
       this.playlist = this.pickAUnplayedPlaylist();
       this.playingVideoID = null;
-      this.showGrey =
-        this.playlist.showGrey !== undefined ? this.playlist.showGrey : true;
       this.nextVideo();
     },
     toYouTube() {
