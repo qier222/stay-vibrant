@@ -40,6 +40,11 @@ export default [
     videos: ["Hb0C16l9Msc"],
   },
   {
+    title: "Hi This Is Flume",
+    subtitle: "Flume",
+    videos: ["7TML_MTQdg4"],
+  },
+  {
     title: "CANDY II Special Performance (Digital Mirage Friendsgiving)",
     subtitle: "Louis The Child",
     videos: ["vj2BUBh6nUk"],
@@ -69,6 +74,12 @@ export default [
     title: "Sunrise Set - Grand Lake, CO",
     subtitle: "Lane 8",
     videos: ["n_LcVqqHSY8"],
+    showGrey: false,
+  },
+  {
+    title: "Tchami B2B Dr. Fresch Live Set (Digital Mirage Friendsgiving)",
+    subtitle: "Dr. Fresch + Tchami",
+    videos: ["T_SmY0jy1DY"],
   },
   {
     title: "A STUDY IN MOVEMENT",
