@@ -82,6 +82,21 @@ export default [
     videos: ["T_SmY0jy1DY"],
   },
   {
+    title: "Digital Mirage 2",
+    subtitle: "MALAA",
+    videos: ["M23FTVwWiMk"],
+  },
+  {
+    title: "Digital Mirage 2",
+    subtitle: "Deathpact",
+    videos: ["WghXuwBsrnc"],
+  },
+  {
+    title: "Digital Mirage 3 Friendsgiving",
+    subtitle: "Voltra",
+    videos: ["nIIHvLJaytU"],
+  },
+  {
     title: "A STUDY IN MOVEMENT",
     subtitle: "BAYNK",
     videos: ["nzW8h9eIPAc", "WPFKHtoPv7Q", "fEmab1pJcbM", "9zIaIn6D6ik"],
@@ -89,6 +104,12 @@ export default [
   {
     title: "Nature",
     subtitle: "Porter Robinson",
-    videos: ["TJBh_hj6DzE", "-C-2AqRD8io", "PkiIPzG37vQ", "4SZEDBFPpgw"],
+    videos: [
+      "TJBh_hj6DzE",
+      "-C-2AqRD8io",
+      "q-74HTjRbuY",
+      "PkiIPzG37vQ",
+      "4SZEDBFPpgw",
+    ],
   },
 ];
