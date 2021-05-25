@@ -1,0 +1,368 @@
+.App {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  max-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.video-wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  .plyr {
+    margin-top: -4px;
+    height: calc(100vh + 8px);
+    width: calc(100vh / 9 * 16);
+    margin-left: calc((100vh / 9 * 16 - 100vw) / -2);
+    max-width: unset;
+  }
+  .plyr__video-embed iframe {
+    top: -50%;
+    height: 200%;
+  }
+}
+
+.grey-layer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: saturate(160%) contrast(110%) brightness(104%);
+}
+
+.big-title {
+  color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  mix-blend-mode: difference;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 8rem;
+  font-weight: 700;
+
+  span {
+    cursor: pointer;
+  }
+}
+
+.big-play-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  mix-blend-mode: difference;
+  color: #fff;
+  font-size: 8rem;
+  user-select: none;
+  span {
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.6s;
+    letter-spacing: 4px;
+    &:hover {
+      letter-spacing: 16px;
+    }
+  }
+}
+
+.info {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  mix-blend-mode: difference;
+  color: #fff;
+
+  .top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 32px 0 32px;
+    font-weight: 700;
+    .website-title {
+      cursor: pointer;
+      font-size: 64px;
+    }
+    .credit {
+      font-size: 18px;
+      margin-right: 18px;
+    }
+    .playlist-details {
+      margin-top: -4px;
+      display: none;
+      .title {
+        font-size: 2.2rem;
+      }
+      .dj {
+        margin-top: 3px;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 32px 32px 32px;
+    font-weight: 700;
+
+    .playlist-details {
+      .title {
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 8px;
+        margin-left: 4px;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .dj {
+        font-size: 18px;
+        margin-left: 4px;
+      }
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+      div {
+        transition: all 0.4s;
+        &:hover {
+          letter-spacing: 2px;
+        }
+      }
+      .pause {
+        margin-right: 48px;
+      }
+      .menu {
+        margin-right: 24px;
+      }
+    }
+  }
+}
+
+.menu-panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  min-width: 256px;
+  max-width: 36vw;
+  height: 100vh;
+  border-left: 2px solid rgba(255, 255, 255, 0.06);
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(100%);
+  transition: all 0.4s;
+
+  .playlists {
+    overflow: scroll;
+    padding-bottom: 1rem;
+    .playlist {
+      margin: 2rem 1.4rem 1rem 1.4rem;
+      padding-left: 12px;
+      border-left: 8px solid rgba(255, 255, 255, 0.16);
+      cursor: pointer;
+      transition: all 0.2s;
+      .title {
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+      .dj {
+        opacity: 0.58;
+        font-size: 1.2rem;
+        margin-top: 2px;
+      }
+      &:hover {
+        border-color: rgba(255, 255, 255, 1);
+      }
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .buttons {
+    font-weight: 700;
+    font-size: 1.4rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    line-height: 28px;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      border-right: 2px solid rgba(255, 255, 255, 0.06);
+      padding: 1.4rem 0;
+      cursor: pointer;
+      transition: all 0.4s;
+      &:hover {
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
+
+.menu-panel.show {
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .big-title {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .info {
+    .top {
+      flex-direction: column;
+      align-items: flex-start;
+      .website-title {
+        cursor: default;
+        font-size: 3rem;
+      }
+      .credit {
+        margin-top: 6px;
+        font-size: 0.6rem;
+        opacity: 0.28;
+      }
+      .playlist-details {
+        display: block;
+      }
+    }
+    .bottom {
+      flex-direction: column;
+      .title {
+        font-size: 1.4rem;
+        display: none;
+      }
+      .dj {
+        font-size: 1rem;
+        display: none;
+      }
+      .controls {
+        margin-bottom: 24px;
+        font-size: 1.2rem;
+        justify-content: flex-start;
+        text-align: center;
+        width: 100%;
+        .pause {
+          margin-right: 0;
+          flex: 1;
+        }
+        .menu {
+          flex: 1;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .big-play-button {
+    font-size: 6rem;
+  }
+
+  .menu-panel {
+    max-width: 100vw;
+    left: 0;
+  }
+}
+
+@media (max-width: 414px) {
+  .info .top {
+    .website-title {
+      font-size: 2.9rem;
+    }
+    .credit {
+      font-size: 0.6rem;
+    }
+    .playlist-details {
+      .title {
+        font-size: 2.2rem;
+      }
+      .dj {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .big-play-button {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .info .top {
+    .website-title {
+      font-size: 2.6rem;
+    }
+    .playlist-details {
+      .title {
+        font-size: 1.8rem;
+      }
+      .dj {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .info .top .website-title {
+    font-size: 2.1rem;
+  }
+}
