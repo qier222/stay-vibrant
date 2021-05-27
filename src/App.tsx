@@ -4,6 +4,8 @@ import Plyr from "plyr";
 import { playlists, Playlist, Video } from "./playlists";
 import clsx from "clsx";
 
+const useYouTubeSource = false;
+
 const storeNewPlayedPlaylist = (playlist: Playlist) => {
   let playedPlaylists = JSON.parse(
     localStorage.getItem("playedPlaylists") || "[]"
@@ -31,16 +33,29 @@ const pickRandomPlaylist = (): Playlist => {
   return playlist;
 };
 
-const changePlayerSource = (player: Plyr, id: string) => {
-  player.source = {
-    type: "video",
-    sources: [
-      {
-        src: id,
-        provider: "youtube",
-      },
-    ],
-  };
+const changePlayerSource = (player: Plyr, video: Video) => {
+  if (useYouTubeSource) {
+    player.source = {
+      type: "video",
+      sources: [
+        {
+          src: video.id,
+          provider: "youtube",
+        },
+      ],
+    };
+  } else {
+    player.source = {
+      type: "video",
+      title: "STAY VIBRANT",
+      sources: [
+        {
+          src: `https://static-jp.qier222.com/stay-vibrant/${video.filename}`,
+          size: 1080,
+        },
+      ],
+    };
+  }
 };
 
 function App() {
@@ -99,15 +114,12 @@ function App() {
 
   useEffect(() => {
     if (!player) return;
-    changePlayerSource(player, video.id);
+    changePlayerSource(player, video);
     if (isStarted) {
-      player.on("ready", () => {
-        player.play();
-      });
+      const ready = () => player.play();
+      player.on("ready", ready);
+      // return player.off("ready", ready);
     }
-    return player.off("ready", () => {
-      player.play();
-    });
   }, [player, video, playlist, isStarted]);
 
   useEffect(() => {
