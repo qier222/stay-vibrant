@@ -72,6 +72,8 @@ function App() {
   const [showBigTitle, setShowBigTitle] = useState<boolean>(
     document.body.clientWidth > 768 ? true : false
   );
+  const [hover, setHover] =
+    useState<"none" | "bigPlay" | "bigTitle" | "title">("none");
 
   const changePlaylist = useCallback(
     (playlist: Playlist, source: "pickRandomPlaylist" | "" = "") => {
@@ -117,8 +119,7 @@ function App() {
     changePlayerSource(player, video);
     if (isStarted) {
       const ready = () => player.play();
-      player.on("ready", ready);
-      // return player.off("ready", ready);
+      player.once("ready", ready);
     }
   }, [player, video, playlist, isStarted]);
 
@@ -155,36 +156,79 @@ function App() {
       <div className="video-wrapper">
         <video ref={playerRef}></video>
       </div>
+
       <div
         className={clsx("grey-layer", !isShowGreyLayer && "display-none")}
       ></div>
-      <div className={clsx("big-play-button", isStarted && "display-none")}>
+
+      <div
+        className={clsx(
+          "big-play-button glitch-animation",
+          isStarted && "display-none"
+        )}
+      >
         <span
           onClick={() => {
             player?.play();
             setIsStarted(true);
             setIsPlaying(true);
           }}
+          data-name="PLAY"
+          className={clsx(hover === "bigPlay" && "glitch-container")}
+          onMouseEnter={() => {
+            setHover("bigPlay");
+          }}
+          onMouseLeave={() => {
+            setHover("none");
+          }}
         >
-          PLAY
+          <span>PLAY</span>
         </span>
       </div>
+
       <div
         className={clsx(
-          "big-title",
+          "big-title  glitch-animation",
           (!isStarted || !showBigTitle) && "display-none"
         )}
         onClick={() => setShowMenu(false)}
       >
-        <span onClick={() => setShowBigTitle(false)}>{specialBigTitle}</span>
+        <span
+          onClick={() => setShowBigTitle(false)}
+          data-name={specialBigTitle}
+          className={clsx(hover === "bigTitle" && "glitch-container")}
+          onMouseEnter={() => {
+            setHover("bigTitle");
+          }}
+          onMouseLeave={() => {
+            setHover("none");
+          }}
+        >
+          <span>{specialBigTitle}</span>
+        </span>
       </div>
+
       <div
         className={clsx("info", (!isStarted || showBigTitle) && "display-none")}
         onClick={() => setShowMenu(false)}
       >
         <div className="top">
-          <div className="website-title" onClick={() => setShowBigTitle(true)}>
-            {specialBigTitle}
+          <div
+            className="website-title  glitch-animation"
+            onClick={() => setShowBigTitle(true)}
+            onMouseEnter={() => {
+              setHover("title");
+            }}
+            onMouseLeave={() => {
+              setHover("none");
+            }}
+          >
+            <span
+              data-name={specialBigTitle}
+              className={clsx(hover === "title" && "glitch-container")}
+            >
+              {specialBigTitle}
+            </span>
           </div>
           <div className="playlist-details">
             <a
