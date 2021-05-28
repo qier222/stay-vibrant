@@ -3,6 +3,7 @@ import "./App.scss";
 import Plyr from "plyr";
 import { playlists, Playlist, Video } from "./playlists";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
 const useYouTubeSource = false;
 
@@ -167,7 +168,7 @@ function App() {
           isStarted && "display-none"
         )}
       >
-        <span
+        <motion.span
           onClick={() => {
             player?.play();
             setIsStarted(true);
@@ -181,9 +182,13 @@ function App() {
           onMouseLeave={() => {
             setHover("none");
           }}
+          initial={{ scale: 10 }}
+          animate={{ scale: 1 }}
+          transition={{ type: "spring", duration: 0.5, bounce: 0.25 }}
+          exit={{ opacity: 0 }}
         >
           <span>PLAY</span>
-        </span>
+        </motion.span>
       </div>
 
       <div
