@@ -298,4 +298,37 @@ export const playlists: Playlist[] = [
       { id: "FHwSghIG6VQ", filename: "IMANU B2B Buunshin @ Secret Sky.webm" },
     ],
   },
+  {
+    title: "bb u ok?",
+    dj: "San Holo",
+    specialBigTitle: "bb u ok?",
+    videos: [
+      {
+        id: "vPAhSrVTtgk",
+        filename: "San Holo - bb u ok (Official Visualiser).webm",
+      },
+      {
+        id: "LIZ_Hh_YhPg",
+        filename:
+          "San Holo - you’ve changed, i’ve changed (feat. Chet Porter) (Official Lyric vide.webm",
+        showGreyLayer: false,
+      },
+      {
+        id: "86ivUkT8RCY",
+        filename: "San Holo - IT HURTS! (Official Lyric Video).webm",
+        showGreyLayer: false,
+      },
+      {
+        id: "Uk8laoyYnz4",
+        filename: "San Holo - MY FAULT (Official Music Video).webm",
+        showGreyLayer: false,
+      },
+      {
+        id: "82E2sDcxf8c",
+        filename:
+          "San Holo - find your way (feat. Bipolar Sunshine) (Official Lyric Video).webm",
+        showGreyLayer: false,
+      },
+    ],
+  },
 ];
