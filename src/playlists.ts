@@ -238,6 +238,59 @@ export const playlists: Playlist[] = [
         remark: "Sigh",
         filename: "shallou - Sigh - Nomad Series.webm",
       },
+      {
+        id: "wheZ0p65Gbo",
+        filename: "shallou - Vignette - Nomad Series.webm",
+      },
+      {
+        id: "KW7Mj97DkAE",
+        filename: "Petit Biscuit, Shallou - I Leave Again - Nomad Series.webm",
+      },
+      {
+        id: "c3gqG_vbjp8",
+        filename:
+          "shallou x Kasbo - Find (with Cody Lovaas) - Nomad Series.webm",
+      },
+      {
+        id: "32wBvatTyGs",
+        filename: "shallou - . . . Lost - Nomad Series.webm",
+      },
+      {
+        id: "duXW2KRyEDo",
+        filename: "shallou - Skin - Nomad Series.webm",
+      },
+      {
+        id: "kTthxT9mpOA",
+        filename: "shallou - Lie (feat. Riah) - Nomad Series.webm",
+      },
+      {
+        id: "2ECgQTZojR4",
+        filename: "shallou - Begin (feat. Wales) - Nomad Series.webm",
+      },
+      {
+        id: "1trifshoIw0",
+        filename: "shallou - You and Me - Nomad Series.webm",
+      },
+      {
+        id: "CBz3HbWyCjQ",
+        filename: "shallou - Fictions - Nomad Series.webm",
+      },
+      {
+        id: "yqTBC5K4Xa8",
+        filename: "shallou - Last Day . . . - Nomad Series.webm",
+      },
+      {
+        id: "UMMRe-mVJIM",
+        filename: "shallou - . . . Love - Nomad Series.webm",
+      },
+      {
+        id: "0DZKc96T-RU",
+        filename: "shallou - Truth - Nomad Series.webm",
+      },
+      {
+        id: "FzYzmXlo_3g",
+        filename: "Shallou - Older with Daya (Nomad Visualizer).webm",
+      },
     ],
   },
   {
@@ -317,6 +370,11 @@ export const playlists: Playlist[] = [
         id: "86ivUkT8RCY",
         filename: "San Holo - IT HURTS! (Official Lyric Video).webm",
         showGreyLayer: false,
+      },
+      {
+        id: "rGuFmijn-Qw",
+        filename:
+          "San Holo - wheels up (feat. Rivers Cuomo of Weezer) (Official Video).webm",
       },
       {
         id: "Uk8laoyYnz4",
