@@ -352,6 +352,16 @@ export const playlists: Playlist[] = [
     ],
   },
   {
+    title: "Live from Joshua Tree",
+    dj: "RÜFÜS DU SOL",
+    videos: [
+      {
+        id: "Zy4KtD98S2c",
+        filename: "RÜFÜS DU SOL - Live from Joshua Tree.webm",
+      },
+    ],
+  },
+  {
     title: "bb u ok?",
     dj: "San Holo",
     specialBigTitle: "bb u ok?",
