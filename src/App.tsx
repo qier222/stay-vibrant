@@ -5,7 +5,8 @@ import { playlists, Playlist, Video } from "./playlists";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 
-const useYouTubeSource = false;
+const useYouTubeSource =
+  process.env.REACT_APP_VIDEO_SOURCE?.toLocaleLowerCase() === "youtube";
 
 const storeNewPlayedPlaylist = (playlist: Playlist) => {
   let playedPlaylists = JSON.parse(
